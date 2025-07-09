@@ -1,0 +1,9 @@
+services:
+  agents-pg:
+    image: pgvector/pgvector:pg17
+    ports:
+      - "5432:5432"
+    env_file:
+      - .env
+    volumes:
+      - "./docker/setup.sql:/docker-entrypoint-initdb.d/setup.sql"
